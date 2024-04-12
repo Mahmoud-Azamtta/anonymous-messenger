@@ -44,9 +44,7 @@ export const login = async (req, res) => {
     return res.status(406).json({ message: "Incorrect password" });
   }
 
-  console.log(user);
   if (!user.confirmedEmail) {
-    console.log(user.confirmedEmail);
     return res.json({ message: "User must confirm his/her email address" });
   }
 
@@ -81,7 +79,6 @@ export const confirmEmail = async (req, res) => {
 };
 
 const sendConfirmEmail = async (to, token) => {
-  console.log(token);
   const subject = "Confirm your email";
   const body = `
     <main>
@@ -95,8 +92,7 @@ const sendConfirmEmail = async (to, token) => {
     .then(() => {
       return true;
     })
-    .catch((error) => {
-      console.log("error", error);
+    .catch(() => {
       return false;
     });
 };
