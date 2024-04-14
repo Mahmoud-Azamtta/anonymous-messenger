@@ -24,7 +24,11 @@ export const register = async (req, res) => {
 
   return res.status(201).json({
     message: "success",
-    user: { username: newUser.username, email: newUser.email },
+    user: {
+      username: newUser.username,
+      email: newUser.email,
+      confirmEmailToken: token,
+    },
   });
 };
 
