@@ -10,9 +10,9 @@ export const registerSchema = {
     gender: joi.string().alphanum().valid("Male", "Female"),
   }),
   // this query part is just for testing it does not has anything to do with the registeration functionality
-  query: joi.object({
-    test: joi.boolean().required(),
-  }),
+  // query: joi.object({
+  //   test: joi.boolean().required(),
+  // }),
 };
 
 export const loginSchema = {
